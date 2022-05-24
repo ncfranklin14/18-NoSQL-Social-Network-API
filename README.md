@@ -45,3 +45,5 @@ You’ll use Express.js for routing, a MongoDB database, and the Mongoose ODM. I
 No seed data is provided, so you’ll need to create your own data using Insomnia after you’ve created your API.
 
 ## Link to walk-through video
+
+https://drive.google.com/file/d/1vWfYoHIPqZb6hoJze4HRRgzIuBeZZDoq/view
