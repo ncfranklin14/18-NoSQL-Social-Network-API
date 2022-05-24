@@ -14,7 +14,7 @@ module.exports = {
             .then((thought) =>
                 !thought
                     ? res.status(404).json({ message: 'No thought with that ID' })
-                    : res.json(user)
+                    : res.json(thought)
             )
             .catch((err) => res.status(500).json(err));
     },
@@ -71,7 +71,7 @@ module.exports = {
         addReaction(req, res) {
         Thought.findOneAndUpdate(
             { _id: req.params.thoughtId },
-            { $addToSet: { "reactions": req.params.reactionsId } },
+            { $addToSet: { reactions: req.body }},
             {runValidators: true, new: true }
         )
             .then((thought) =>
@@ -79,7 +79,7 @@ module.exports = {
                     ? res.status(404).json({
                         message: 'reaction created, but found no thought with that ID',
                     })
-                    : res.json('thought added🎉')
+                    : res.json(thought)
             )
             .catch((err) => {
                 console.log(err);
